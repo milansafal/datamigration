@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataMigration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4be70e1423b5994d845e7eba3c0cb6b359775559")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataMigration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataMigration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

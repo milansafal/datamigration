@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\DummyProject\\DataMigration\\DataMigration.csproj": {}
+    "D:\\Project\\DummyProject\\gitdatamigration\\DataMigration.csproj": {}
   },
   "projects": {
-    "D:\\Project\\DummyProject\\DataMigration\\DataMigration.csproj": {
+    "D:\\Project\\DummyProject\\gitdatamigration\\DataMigration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\DummyProject\\DataMigration\\DataMigration.csproj",
+        "projectUniqueName": "D:\\Project\\DummyProject\\gitdatamigration\\DataMigration.csproj",
         "projectName": "DataMigration",
-        "projectPath": "D:\\Project\\DummyProject\\DataMigration\\DataMigration.csproj",
+        "projectPath": "D:\\Project\\DummyProject\\gitdatamigration\\DataMigration.csproj",
         "packagesPath": "C:\\Users\\baps\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\DummyProject\\DataMigration\\obj\\",
+        "outputPath": "D:\\Project\\DummyProject\\gitdatamigration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
