@@ -17,20 +17,20 @@ public class MaterialMasterMigration : MigrationService
     {
         return new List<string> 
         { 
-            "Direct",           // material_id
-            "Direct",           // material_code
-            "Direct",           // material_name
-            "Direct",           // material_description
-            "FK",               // uom_id
-            "FK",               // material_group_id
-            "FK",               // company_id
-            "Default: 0",       // created_by
-            "Default: Now",     // created_date
-            "Default: null",    // modified_by
-            "Default: null",    // modified_date
-            "Default: false",   // is_deleted
-            "Default: null",    // deleted_by
-            "Default: null"     // deleted_date
+            "ITEMID -> material_id (Direct)",
+            "ITEMCODE -> material_code (Direct)",
+            "ITEMNAME -> material_name (Direct)",
+            "ITEMDESCRIPTION -> material_description (Direct)",
+            "UOMId -> uom_id (FK to uom_master)",
+            "MaterialGroupId -> material_group_id (FK to material_group_master)",
+            "ClientSAPId -> company_id (FK to company)",
+            "created_by -> 0 (Fixed)",
+            "created_date -> NOW() (Generated)",
+            "modified_by -> NULL (Fixed)",
+            "modified_date -> NULL (Fixed)",
+            "is_deleted -> false (Fixed)",
+            "deleted_by -> NULL (Fixed)",
+            "deleted_date -> NULL (Fixed)"
         };
     }
 

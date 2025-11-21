@@ -12,6 +12,7 @@ public class MigrationController : Controller
     private readonly PurchaseGroupMasterMigration _purchaseGroupMigration;
     private readonly PaymentTermMasterMigration _paymentTermMigration;
     private readonly MaterialMasterMigration _materialMigration;
+    private readonly EventMasterMigration _eventMigration;
 
     public MigrationController(
         UOMMasterMigration uomMigration, 
@@ -20,7 +21,8 @@ public class MigrationController : Controller
         MaterialGroupMasterMigration materialGroupMigration,
         PurchaseGroupMasterMigration purchaseGroupMigration,
         PaymentTermMasterMigration paymentTermMigration,
-        MaterialMasterMigration materialMigration)
+        MaterialMasterMigration materialMigration,
+        EventMasterMigration eventMigration)
     {
         _uomMigration = uomMigration;
         _plantMigration = plantMigration;
@@ -29,6 +31,7 @@ public class MigrationController : Controller
         _purchaseGroupMigration = purchaseGroupMigration;
         _paymentTermMigration = paymentTermMigration;
         _materialMigration = materialMigration;
+        _eventMigration = eventMigration;
     }
 
     public IActionResult Index()
@@ -47,9 +50,8 @@ public class MigrationController : Controller
             new { name = "materialgroup", description = "TBL_MaterialGroupMaster to material_group_master" },
             new { name = "purchasegroup", description = "TBL_PurchaseGroupMaster to purchase_group_master" },
             new { name = "paymentterm", description = "TBL_PAYMENTTERMMASTER to payment_term_master" },
-            new { name = "material", description = "TBL_ITEMMASTER to material_master" }
-
-
+            new { name = "material", description = "TBL_ITEMMASTER to material_master" },
+            new { name = "eventmaster", description = "TBL_EVENTMASTER to event_master + event_setting" }
         };
         return Json(tables);
     }
@@ -92,6 +94,11 @@ public class MigrationController : Controller
             var mappings = _materialMigration.GetMappings();
             return Json(mappings);
         }
+        else if (table.ToLower() == "eventmaster")
+        {
+            var mappings = _eventMigration.GetMappings();
+            return Json(mappings);
+        }
         return Json(new List<object>());
     }
 
@@ -128,6 +135,10 @@ public class MigrationController : Controller
             else if (request.Table.ToLower() == "material")
             {
                 recordCount = await _materialMigration.MigrateAsync();
+            }
+            else if (request.Table.ToLower() == "eventmaster")
+            {
+                recordCount = await _eventMigration.MigrateAsync();
             }
             else
             {

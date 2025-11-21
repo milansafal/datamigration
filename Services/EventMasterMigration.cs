@@ -72,7 +72,7 @@ public class EventMasterMigration : MigrationService
             "EVENTNAME -> event_name (Direct)",
             "EVENTDESC -> event_description (Direct)",
             "ROUND -> round (Direct)",
-            "EVENTTYPE -> event_type (Direct)",
+            "EVENTTYPE -> event_type (Transform: 1=RFQ, 2=Forward Auction, 3=Reverse Auction)",
             "CURRENTSTATUS -> event_status (Direct)",
             "PARENTID -> parent_id (Direct, 0 if NULL)",
             "price_bid_template -> pb buyer table pbtype (Lookup)",
@@ -156,7 +156,22 @@ public class EventMasterMigration : MigrationService
                             insertCmd.Parameters.AddWithValue("@event_name", reader["EVENTNAME"] ?? DBNull.Value);
                             insertCmd.Parameters.AddWithValue("@event_description", reader["EVENTDESC"] ?? DBNull.Value);
                             insertCmd.Parameters.AddWithValue("@round", reader["ROUND"] != DBNull.Value ? reader["ROUND"] : 0);
-                            insertCmd.Parameters.AddWithValue("@event_type", reader["EVENTTYPE"] ?? DBNull.Value);
+                            
+                            // Convert EVENTTYPE integer to string
+                            string eventType = "";
+                            if (reader["EVENTTYPE"] != DBNull.Value)
+                            {
+                                int eventTypeValue = Convert.ToInt32(reader["EVENTTYPE"]);
+                                eventType = eventTypeValue switch
+                                {
+                                    1 => "RFQ",
+                                    2 => "Forward Auction",
+                                    3 => "Reverse Auction",
+                                    _ => reader["EVENTTYPE"].ToString()
+                                };
+                            }
+                            insertCmd.Parameters.AddWithValue("@event_type", string.IsNullOrEmpty(eventType) ? DBNull.Value : eventType);
+                            
                             insertCmd.Parameters.AddWithValue("@event_status", reader["CURRENTSTATUS"] ?? DBNull.Value);
                             insertCmd.Parameters.AddWithValue("@parent_id", reader["PARENTID"] != DBNull.Value ? reader["PARENTID"] : 0);
                             insertCmd.Parameters.AddWithValue("@price_bid_template", DBNull.Value); // TODO: Lookup from pb buyer table

@@ -19,6 +19,7 @@ builder.Services.AddScoped<MaterialGroupMasterMigration>();
 builder.Services.AddScoped<PurchaseGroupMasterMigration>();
 builder.Services.AddScoped<PaymentTermMasterMigration>();
 builder.Services.AddScoped<MaterialMasterMigration>();
+builder.Services.AddScoped<EventMasterMigration>();
 
 var app = builder.Build();
 
