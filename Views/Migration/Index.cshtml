@@ -1,0 +1,358 @@
+﻿@{
+    ViewData["Title"] = "Live Data Migration Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @@media (min-width: 1400px) {
+            .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                max-width: 100%;
+            }
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #212529;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-right: 1px solid #dee2e6;
+            padding: 1rem;
+            min-height: 100vh;
+            width: 35%;
+            overflow-y: auto;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .main-content {
+            padding: 1rem;
+            width: 65%;
+            background: linear-gradient(182deg, #ffffff 0%, #333b42 100%);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .migration-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+            .migration-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+            border-radius: 4px;
+            height: 16px;
+        }
+
+        .status-pending {
+            color: #ffc107;
+        }
+
+        .status-progress {
+            color: #1976d2;
+        }
+
+        .status-success {
+            color: #28a745;
+        }
+
+        .status-failed {
+            color: #dc3545;
+        }
+
+        .btn-modern {
+            background: linear-gradient(45deg, #1976d2, #42a5f5);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+        }
+
+            .btn-modern:hover {
+                background: linear-gradient(45deg, #1565c0, #1e88e5);
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4);
+            }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-select {
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .mapping-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 2%;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+            .mapping-card:hover {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                transform: scale(1.01);
+            }
+
+            .mapping-card::before {
+                content: '🔗';
+                margin-right: 0.5rem;
+            }
+
+        .mapping-source, .mapping-logic, .mapping-target {
+            flex: 1;
+            text-align: center;
+        }
+
+        .mapping-source {
+            text-align: left;
+        }
+
+        .mapping-target {
+            text-align: right;
+        }
+
+
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+            .mapping-table th, .mapping-table td {
+                border: 1px solid #dee2e6;
+                padding: 8px;
+                text-align: center;
+            }
+
+            .mapping-table th {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                font-weight: 600;
+            }
+
+            .mapping-table tr:nth-child(even) {
+                background: linear-gradient(135deg, #f8f9fa 0%, #f9f9f9 100%);
+            }
+
+            .mapping-table tr:hover {
+                background: linear-gradient(135deg, #e9ecef 0%, #f0f0f0 100%);
+            }
+
+        .header-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Sidebar: Mapping Chart -->
+            <div class="col-lg-4 sidebar">
+                <div class="header-box">
+                    <h4><i class="fas fa-project-diagram"></i> Mapping Chart</h4>
+                </div>
+                <select class="form-select mb-3" id="tableSelect" onchange="loadMappings()">
+                    <option value="">Select a table...</option>
+                </select>
+                <div id="mappingsContent">
+                    <p>Select a table to load mappings.</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Migration Process -->
+            <div class="col-lg-8 main-content">
+                <div class="header-box">
+                    <h1><i class="fas fa-sync-alt"></i> Migration Process</h1>
+                </div>
+                <p>Select a table from the left panel to view mappings and start migration.</p>
+
+                <div class="row" id="migrationCards">
+                    <p>No table selected.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onload = function() {
+            loadTables();
+        };
+
+        function loadTables() {
+            console.log('Loading tables');
+            fetch('/Migration/GetTables')
+                .then(response => {
+                    console.log('GetTables response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('GetTables data:', data);
+                    const select = document.getElementById('tableSelect');
+                    data.forEach(table => {
+                        const option = document.createElement('option');
+                        option.value = table.name;
+                        option.textContent = table.name + ' - ' + table.description;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading tables:', error);
+                    alert('Failed to load tables: ' + error.message);
+                });
+        }
+
+        function loadMappings() {
+            const select = document.getElementById('tableSelect');
+            const table = select.value;
+            console.log('Loading mappings for table:', table);
+            if (!table) {
+                document.getElementById('mappingsContent').innerHTML = '<p>Select a table to load mappings.</p>';
+                document.getElementById('migrationCards').innerHTML = '<p>No table selected.</p>';
+                return;
+            }
+            fetch('/Migration/GetMappings?table=' + table)
+                .then(response => {
+                    console.log('GetMappings response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('GetMappings data:', data);
+                    const content = document.getElementById('mappingsContent');
+                    content.innerHTML = '<h5>' + table + ' Mappings</h5>';
+                    data.forEach(mapping => {
+                        content.innerHTML += '<div class="mapping-card"><div class="mapping-source"> ' + mapping.source + '</div><div class="mapping-logic">' + mapping.logic + '</div><div class="mapping-target">' + mapping.target + '</div></div>';
+                    });
+                    loadMigrationCard(table);
+                })
+                .catch(error => {
+                    console.error('Error loading mappings:', error);
+                    alert('Failed to load mappings: ' + error.message);
+                });
+        }
+
+        function loadMigrationCard(table) {
+            const cards = document.getElementById('migrationCards');
+            cards.innerHTML = '<div class="col-12"><div class="card migration-card"><div class="card-header text-white" style="background-color:rgb(41 56 79) !important"><h5 class="card-title mb-0"><i class="fas fa-box"></i> ' + table + ' Migration</h5></div><div class="card-body"><p>Migrate ' + table + ' data.</p><div class="mb-3"><div class="progress"><div class="progress-bar" id="' + table + 'Progress" style="width: 0%;"></div></div></div><p id="' + table + 'Status" class="status-pending"><i class="fas fa-circle"></i> Ready to Migrate</p><div id="' + table + 'Message" class="d-none alert alert-info"></div><button class="btn btn-modern" id="migrate' + table + 'Btn" onclick="startMigration(\'' + table + '\')"><i class="fas fa-play"></i> Start Migration</button></div></div></div>';
+        }
+
+        function startMigration(type) {
+            console.log('Starting migration for ' + type);
+            const btn = document.getElementById('migrate' + type + 'Btn');
+            const progress = document.getElementById(type + 'Progress');
+            const status = document.getElementById(type + 'Status');
+            const message = document.getElementById(type + 'Message');
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Migrating...';
+            status.className = 'status-progress';
+            status.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> In Progress';
+            progress.style.width = '50%';
+
+            fetch('/Migration/MigrateAsync', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ table: type })
+            })
+            .then(response => {
+                console.log('MigrateAsync response status:', response.status);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('MigrateAsync data:', data);
+                progress.style.width = '100%';
+                if (data.success) {
+                    status.className = 'status-success';
+                    status.innerHTML = '<i class="fas fa-check-circle"></i> Completed Successfully';
+                    message.className = 'alert alert-success';
+                    message.innerHTML = data.message;
+                    message.classList.remove('d-none');
+                } else {
+                    status.className = 'status-failed';
+                    status.innerHTML = '<i class="fas fa-times-circle"></i> Failed';
+                    message.className = 'alert alert-danger';
+                    message.innerHTML = data.error;
+                    message.classList.remove('d-none');
+                }
+            })
+            .catch(error => {
+                console.error('Error during migration:', error);
+                status.className = 'status-failed';
+                status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+                message.className = 'alert alert-danger';
+                message.innerHTML = 'Network error occurred: ' + error.message;
+                message.classList.remove('d-none');
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-play"></i> Start Migration';
+            });
+        }
+    </script>
+</body>
+</html>

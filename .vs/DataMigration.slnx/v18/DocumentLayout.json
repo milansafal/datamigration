@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\DummyProject\\DataMigration\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\materialmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\materialmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\uommastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\uommastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\paymenttermmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\paymenttermmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\controller\\migrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:controller\\migrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\purchasegroupmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\purchasegroupmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\materialgroupmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\materialgroupmastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\currencymastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\currencymastermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|d:\\project\\dummyproject\\datamigration\\services\\migrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CDD1B5B-E362-78E9-CF4B-303F6DD6594F}|DataMigration.csproj|solutionrelative:services\\migrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 231,
+          "SelectedChildIndex": 16,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:10:58.395Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MigrationService.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\MigrationService.cs",
+              "RelativeDocumentMoniker": "Services\\MigrationService.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\MigrationService.cs",
+              "RelativeToolTip": "Services\\MigrationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T05:54:02.89Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MigrationController.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Controller\\MigrationController.cs",
+              "RelativeDocumentMoniker": "Controller\\MigrationController.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Controller\\MigrationController.cs",
+              "RelativeToolTip": "Controller\\MigrationController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAkwHEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T06:21:10.883Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UOMMasterMigration.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\UOMMasterMigration.cs",
+              "RelativeDocumentMoniker": "Services\\UOMMasterMigration.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\UOMMasterMigration.cs",
+              "RelativeToolTip": "Services\\UOMMasterMigration.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA+wDgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T10:14:57.714Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MaterialMasterMigration.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\MaterialMasterMigration.cs",
+              "RelativeDocumentMoniker": "Services\\MaterialMasterMigration.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\MaterialMasterMigration.cs",
+              "RelativeToolTip": "Services\\MaterialMasterMigration.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwFYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:58:53.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentTermMasterMigration.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\PaymentTermMasterMigration.cs",
+              "RelativeDocumentMoniker": "Services\\PaymentTermMasterMigration.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\PaymentTermMasterMigration.cs",
+              "RelativeToolTip": "Services\\PaymentTermMasterMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:47:31.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PurchaseGroupMasterMigration.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\PurchaseGroupMasterMigration.cs",
+              "RelativeDocumentMoniker": "Services\\PurchaseGroupMasterMigration.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\PurchaseGroupMasterMigration.cs",
+              "RelativeToolTip": "Services\\PurchaseGroupMasterMigration.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:34:34.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MaterialGroupMasterMigration.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\MaterialGroupMasterMigration.cs",
+              "RelativeDocumentMoniker": "Services\\MaterialGroupMasterMigration.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\MaterialGroupMasterMigration.cs",
+              "RelativeToolTip": "Services\\MaterialGroupMasterMigration.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswEMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:23:55.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CurrencyMasterMigration.cs",
+              "DocumentMoniker": "D:\\Project\\DummyProject\\DataMigration\\Services\\CurrencyMasterMigration.cs",
+              "RelativeDocumentMoniker": "Services\\CurrencyMasterMigration.cs",
+              "ToolTip": "D:\\Project\\DummyProject\\DataMigration\\Services\\CurrencyMasterMigration.cs",
+              "RelativeToolTip": "Services\\CurrencyMasterMigration.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwEUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T11:10:26.796Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
