@@ -144,5 +144,5 @@ public class MigrationController : Controller
 
 public class MigrationRequest
 {
-    public string Table { get; set; }
+    public required string Table { get; set; }
 }

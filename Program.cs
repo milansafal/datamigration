@@ -38,7 +38,10 @@ app.UseCors();
 
 app.UseAuthorization();
 
-// Use top-level route registration instead of UseEndpoints
+// Map controllers
+app.MapControllers();
+
+// Default route to Migration/Index
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Migration}/{action=Index}/{id?}");
